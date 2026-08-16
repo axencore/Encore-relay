@@ -562,8 +562,11 @@
 .encore-canvas-toolbar {
 	position: absolute;
 	bottom: 16px;
-	left: 50%;
-	transform: translateX(-50%);
+	/* Sit to the right of Obsidian's centered node buttons, clearing the
+	   right-hand control column. */
+	right: 64px;
+	left: auto;
+	transform: none;
 	display: flex;
 	gap: 2px;
 	padding: 4px 6px;
