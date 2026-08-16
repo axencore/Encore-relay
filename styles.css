@@ -558,18 +558,13 @@
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Encore Relay: canvas emoji-stamp toolbar */
-.encore-canvas-toolbar {
+/* Encore Relay: compact canvas emoji-stamp widget (single button + dropdown) */
+.encore-canvas-stamp {
 	position: absolute;
 	bottom: 16px;
-	/* Sit to the right of Obsidian's centered node buttons, clearing the
-	   right-hand control column. */
-	right: 64px;
-	left: auto;
-	transform: none;
+	right: 60px;
 	display: flex;
-	gap: 2px;
-	padding: 4px 6px;
+	align-items: stretch;
 	background: var(--background-secondary);
 	border: 1px solid var(--background-modifier-border);
 	border-radius: 10px;
@@ -577,22 +572,61 @@
 	z-index: 10000;
 	pointer-events: auto;
 }
-.encore-stamp-btn {
+.encore-stamp-main {
+	all: unset;
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 1;
+	padding: 6px 8px;
+	border-radius: 10px 0 0 10px;
+}
+.encore-stamp-main:hover {
+	background: var(--background-modifier-hover);
+}
+.encore-stamp-main.is-active {
+	background: var(--interactive-accent);
+}
+.encore-stamp-caret {
+	all: unset;
+	cursor: pointer;
+	font-size: 11px;
+	color: var(--text-muted);
+	padding: 0 6px;
+	display: flex;
+	align-items: center;
+	border-left: 1px solid var(--background-modifier-border);
+	border-radius: 0 10px 10px 0;
+}
+.encore-stamp-caret:hover {
+	background: var(--background-modifier-hover);
+}
+.encore-stamp-dropdown {
+	position: absolute;
+	bottom: calc(100% + 6px);
+	right: 0;
+	display: none;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 2px;
+	padding: 6px;
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 10px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+.encore-stamp-dropdown.open {
+	display: grid;
+}
+.encore-stamp-opt {
 	all: unset;
 	cursor: pointer;
 	font-size: 20px;
 	line-height: 1;
 	padding: 4px;
 	border-radius: 8px;
-	transition:
-		transform 0.06s ease,
-		background 0.1s ease;
+	text-align: center;
+	transition: transform 0.06s ease;
 }
-.encore-stamp-btn:hover {
+.encore-stamp-opt:hover {
 	background: var(--background-modifier-hover);
-	transform: scale(1.2);
-}
-.encore-stamp-btn.is-active {
-	background: var(--interactive-accent);
 	transform: scale(1.15);
 }
