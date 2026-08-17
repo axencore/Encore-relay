@@ -650,10 +650,11 @@
 	align-items: flex-start;
 	gap: 14px;
 }
-/* Hide the icon/iconColor frontmatter rows from the Properties panel so they
-   are invisible to the user (they still sync as normal frontmatter). */
-.metadata-property[data-property-key="icon"],
-.metadata-property[data-property-key="iconColor"] {
+/* Hide the icon/iconColor frontmatter rows everywhere they render (in-note
+   Properties block AND the sidebar Properties view). Case-insensitive because
+   Obsidian lowercases the data-property-key. They still sync as frontmatter. */
+[data-property-key="icon" i],
+[data-property-key="iconcolor" i] {
 	display: none !important;
 }
 .encore-title-icon {
@@ -751,4 +752,12 @@
 }
 .encore-icon-remove {
 	margin-top: 12px;
+}
+
+/* Prevent native drag of content images (it duplicated the embed on drop).
+   Block reordering via the Dragger handle is unaffected. */
+.markdown-source-view .cm-content img,
+.markdown-preview-view img {
+	-webkit-user-drag: none;
+	user-drag: none;
 }
