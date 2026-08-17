@@ -1,10 +1,10 @@
 {
   "id": "system3-relay",
   "name": "Encore Relay",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "minAppVersion": "1.6.6",
   "description": "Real-time collaborative editing with live cursors and shared folders, self-hosted on Encore infrastructure.",
-  "author": "Encore Family",
+  "author": "EncoreFamily",
   "authorUrl": "https://relay.encorefamily.ru",
   "isDesktopOnly": false
 }

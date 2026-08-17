@@ -643,11 +643,18 @@
 	width: 1em;
 	height: 1em;
 }
-/* Big icon to the LEFT of the inline note title (Notion page-header style). */
+/* Big icon to the LEFT of the inline note title (Notion page-header style).
+   Title aligns to the TOP of the icon, not vertically centered. */
 .encore-title-wrap {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 14px;
+}
+/* Hide the icon/iconColor frontmatter rows from the Properties panel so they
+   are invisible to the user (they still sync as normal frontmatter). */
+.metadata-property[data-property-key="icon"],
+.metadata-property[data-property-key="iconColor"] {
+	display: none !important;
 }
 .encore-title-icon {
 	flex: 0 0 auto;
