@@ -643,17 +643,43 @@
 	width: 1em;
 	height: 1em;
 }
-/* Big icon above the inline note title (Notion page-header style). */
+/* Big icon to the LEFT of the inline note title (Notion page-header style). */
+.encore-title-wrap {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
 .encore-title-icon {
-	display: block;
+	flex: 0 0 auto;
 	cursor: pointer;
 	line-height: 1;
-	margin: 0 0 6px;
-	font-size: 42px;
+	font-size: 40px;
+	display: inline-flex;
+	align-items: center;
 }
 .encore-title-icon svg {
-	width: 42px;
-	height: 42px;
+	width: 40px;
+	height: 40px;
+}
+/* Color swatches */
+.encore-color-row {
+	display: flex;
+	gap: 6px;
+	margin-bottom: 12px;
+	flex-wrap: wrap;
+}
+.encore-color-swatch {
+	all: unset;
+	cursor: pointer;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	border: 2px solid var(--background-modifier-border);
+	box-sizing: border-box;
+}
+.encore-color-swatch.active {
+	border-color: var(--interactive-accent);
+	box-shadow: 0 0 0 2px var(--interactive-accent);
 }
 /* Picker modal */
 .encore-icon-tabs {
