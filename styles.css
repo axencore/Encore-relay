@@ -630,3 +630,41 @@
 	background: var(--background-modifier-hover);
 	transform: scale(1.15);
 }
+
+/* ── Encore page icons (Notion-style, synced via frontmatter) ── */
+.encore-page-icon {
+	display: inline-block;
+	margin-right: 5px;
+	font-size: 0.95em;
+	line-height: 1;
+	vertical-align: baseline;
+}
+.encore-icon-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 4px;
+	margin: 12px 0;
+}
+.encore-icon-opt {
+	all: unset;
+	cursor: pointer;
+	font-size: 24px;
+	line-height: 1;
+	padding: 8px;
+	border-radius: 8px;
+	text-align: center;
+	transition: transform 0.06s ease, background 0.06s ease;
+}
+.encore-icon-opt:hover {
+	background: var(--background-modifier-hover);
+	transform: scale(1.15);
+}
+.encore-icon-custom {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	margin-top: 8px;
+}
+.encore-icon-custom input {
+	flex: 1;
+}
