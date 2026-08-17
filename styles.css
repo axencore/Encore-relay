@@ -657,6 +657,11 @@
 [data-property-key="iconcolor" i] {
 	display: none !important;
 }
+/* Hide the hidden folder-icon marker notes (_icon.md) from the file explorer. */
+.nav-file:has(> .nav-file-title[data-path$="/_icon.md"]),
+.nav-file:has(> .nav-file-title[data-path="_icon.md"]) {
+	display: none !important;
+}
 .encore-title-icon {
 	flex: 0 0 auto;
 	cursor: pointer;
